@@ -1,12 +1,12 @@
 import type { JSX } from 'react';
 
-import ListEmployeesContainer from '../containers/ListEmployeesContainer';
+import CreateEmployeeContainer from '../containers/CreateEmployeeContainer';
 
-export default function ListEmployeesPage(): JSX.Element {
+export default function CreateEmployeePage(): JSX.Element {
     // ----------------------------------------------------------------------------------------------------
     // MARK: Main Page UI
     // ----------------------------------------------------------------------------------------------------
     return (
-        <ListEmployeesContainer />
+        <CreateEmployeeContainer />
     );
 }

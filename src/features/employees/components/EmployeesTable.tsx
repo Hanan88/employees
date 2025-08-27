@@ -1,13 +1,14 @@
 'use client';
 
 import type { JSX } from 'react';
-import { Employee } from '../types/Employee';
+import type { Employee } from '../types/Employee';
 
 interface EmployeesTableProps {
     employees: Employee[];
+    isLoading?: boolean;
 }
 
-export default function EmployeesTable({ employees }: EmployeesTableProps): JSX.Element {
+export default function EmployeesTable({ employees, isLoading = false }: EmployeesTableProps): JSX.Element {
     // ----------------------------------------------------------------------------------------------------
     // MARK: States & Constants
     // ----------------------------------------------------------------------------------------------------
@@ -22,6 +23,14 @@ export default function EmployeesTable({ employees }: EmployeesTableProps): JSX.
     // ----------------------------------------------------------------------------------------------------
     // MARK: Main Component UI
     // ----------------------------------------------------------------------------------------------------
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center py-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            </div>
+        );
+    }
+
     if (!employees || employees.length === 0) {
         return (
             <div className="text-center py-8 text-gray-500">

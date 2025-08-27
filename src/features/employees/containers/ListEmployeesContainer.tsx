@@ -4,6 +4,7 @@ import type { JSX } from 'react';
 
 import EmployeesTable from '../components/EmployeesTable';
 import { Employee } from '../types/Employee';
+import Link from 'next/link';
 
 export default function ListEmployeesContainer(): JSX.Element {
     // ----------------------------------------------------------------------------------------------------
@@ -50,9 +51,9 @@ export default function ListEmployeesContainer(): JSX.Element {
                 <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                     <div className="flex justify-between items-center mb-6">
                         <h2 className="text-xl font-semibold text-gray-900">Employees List</h2>
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-150">
+                        <Link href="/employees/new" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-150">
                             Add Employee
-                        </button>
+                        </Link>
                     </div>
                     
                     <EmployeesTable employees={sampleEmployees} />
